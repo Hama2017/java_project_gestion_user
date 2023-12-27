@@ -10,10 +10,10 @@ public class DBConnection {
 
         try {
 
-            Class.forName("com.mysql.jdbc.Driver");
-            String url="jdbc:mysql://db5014940269.hosting-data.io:3306/dbs12419174";
-            String username="dbu4732734";
-            String password="xU674U2j3dmKxmQcPXBs3CUAdxwXG";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url="jdbc:mysql://srv570.hstgr.io:3306/u668028993_javagestionuse";
+            String username="u668028993_javagestionuse";
+            String password="Nacera@2020";
             con = DriverManager.getConnection(url, username, password);
 
         }catch (Exception e){
