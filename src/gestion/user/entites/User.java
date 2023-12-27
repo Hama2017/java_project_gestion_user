@@ -1,6 +1,6 @@
 package gestion.user.entites;
 
-public class User {
+public class User extends Algorithm {
     private int id;
     private int id_role;
     private String email;
@@ -67,14 +67,19 @@ public class User {
     }
 
     public void setPassword(String password) {
+
         this.password = password;
     }
 
-    public String getPassword_hashed() {
+    public String getDateLastEdit() {
+        return dateLastEdit;
+    }
+
+    public String getPasswordHashed() {
         return password_hashed;
     }
 
-    public void setPassword_hashed(String password_hashed) {
-        this.password_hashed = password_hashed;
+    public void setPasswordHashed(String passwordHashed) {
+        this.password_hashed =  crypter(passwordHashed) ;
     }
 }

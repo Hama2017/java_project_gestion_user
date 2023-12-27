@@ -18,13 +18,11 @@ public class RoleImpl implements IRole {
 
         boolean is_success = false;
         con = DBConnection.createDBConnection();
-        String query = "INSERT INTO roles(name,date_created, date_last_edit) VALUES(?,?,?)";
+        String query = "INSERT INTO roles(name,date_created, date_last_edit) VALUES(?,NOW(),NOW())";
 
         try{
             PreparedStatement pstm= con.prepareStatement(query);
             pstm.setString(1, role.getName());
-            pstm.setString(2, role.getDateCreated());
-            pstm.setString(3, role.getDateLastEdit());
             int cnt = pstm.executeUpdate();
             if (cnt!=0) is_success = true;
 
@@ -41,7 +39,7 @@ public class RoleImpl implements IRole {
     public List<Role> showAllRole() {
 
         con = DBConnection.createDBConnection();
-        String query = "SELECT * FROM roles ORDER BY id_role DESC";
+        String query = "SELECT * FROM roles";
 
         List<Role> roles = new ArrayList<>();
         try {

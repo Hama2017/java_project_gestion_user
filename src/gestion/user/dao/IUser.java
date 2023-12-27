@@ -1,13 +1,16 @@
 package gestion.user.dao;
 
+import gestion.user.entites.Role;
 import gestion.user.entites.User;
+
+import java.util.List;
 
 public interface IUser {
 
-    public void createUser(User user);
-    public void showAllUser();
-    public void showUserById(int id);
-    public void updateUser(int id);
-    public void deleteUser(int id);
+    public boolean createUser(User user);
+    public List<User> showAllUser();
+    public User showUserById(int id);
+    public boolean updateUser(int id,String email, String password, String passwordHashed, int idRole);
+    public boolean deleteUser(int id);
 
 }
