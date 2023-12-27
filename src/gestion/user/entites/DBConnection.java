@@ -11,9 +11,9 @@ public class DBConnection {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            String url="jdbc:mysql://localhost:3306/gestion_users";
-            String username="hama";
-            String password="Hama";
+            String url="jdbc:mysql://db5014940269.hosting-data.io:3306/dbs12419174";
+            String username="dbu4732734";
+            String password="xU674U2j3dmKxmQcPXBs3CUAdxwXG";
             con = DriverManager.getConnection(url, username, password);
 
         }catch (Exception e){
