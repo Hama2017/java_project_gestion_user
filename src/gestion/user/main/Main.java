@@ -72,6 +72,7 @@ do {
 
                         case 2:
                             System.out.println("\n");
+                            System.out.println("CHAGERGEMENT EN COURS \n");
                             System.out.println("Liste des Roles : il y'a " + daoRole.showAllRole().size() + " roles ");
 
                             for (Role r : daoRole.showAllRole()) {
@@ -93,6 +94,7 @@ do {
 
                                 System.out.println("SAISIR ID DU ROLE A AFFICHER :");
                                 idRole = scanner.nextInt();
+                                System.out.println("CHAGERGEMENT EN COURS \n");
                                 if(!isRoleExist(idRole)) System.out.println("ERREUR ID INCORRECT ! REESAYER");
 
                             }while(!isRoleExist(idRole));
@@ -114,6 +116,8 @@ do {
 
                                 System.out.println("SAISIR ID DU ROLE A MODIFIER :");
                                 idRole = scanner.nextInt();
+                                System.out.println("CHAGERGEMENT EN COURS \n");
+
                                 if(!isRoleExist(idRole)) System.out.println("ERREUR ID INCORRECT ! REESAYER");
 
                             }while(!isRoleExist(idRole));
@@ -130,9 +134,13 @@ do {
 
                                 System.out.println("SAISIR ID DU ROLE A SUPPRIMER :");
                                 idRole = scanner.nextInt();
+                                System.out.println("CHAGERGEMENT EN COURS \n");
+
                                 if(!isRoleExist(idRole)) System.out.println("ERREUR ID INCORRECT ! REESAYER");
 
                             }while(!isRoleExist(idRole));
+                            System.out.println("CHAGERGEMENT EN COURS \n");
+
                             if (daoRole.deleteRole(idRole)) System.out.println("Role Supprimer avec success");
 
                             break;
@@ -159,15 +167,21 @@ do {
                             String password;
                             System.out.println("E-MAIL : ");
                             adressEmail = scanner.nextLine();
+                            System.out.println("APPUYER SUR ENTRER POUR CONTINUER");
                             scanner.nextLine();
-                            System.out.println("SAISIR L'ID DU ROLE : ");
-                            System.out.println("Liste des Roles : ");
-                            for (Role r : daoRole.showAllRole()) {
-                                System.out.println("ID : " + r.getId());
-                                System.out.println("NAME :" + r.getName().toUpperCase());
-                            }
-                            System.out.println("CHOSIR ID ROLE : \n");
-                            idRole = scanner.nextInt();
+                            System.out.println("CHAGERGEMENT EN COURS \n");
+                            do {
+                                System.out.println("Liste des Roles : \n");
+                                for (Role r : daoRole.showAllRole()) {
+                                    System.out.println( r.getId() + ") "+ r.getName().toUpperCase());
+                                }
+                                System.out.println("\nCHOSIR ID ROLE : ");
+                                idRole = scanner.nextInt();
+
+                                if(!isRoleExist(idRole)) System.out.println("\nERREUR ID INCORRECT ! REES2AYER");
+
+                            }while(!isRoleExist(idRole));
+
                             System.out.println("PASSWORD : ");
                             scanner.nextLine();
                             password = scanner.nextLine();
@@ -180,6 +194,8 @@ do {
 
 
                         case 2:
+                            System.out.println("CHAGERGEMENT EN COURS \n");
+
                             System.out.println("\n");
                             System.out.println("Liste des Utilisateurs : il y'a " + daoUser.showAllUser().size() + " utilisateurs ");
                             for (User u : daoUser.showAllUser()) {
@@ -203,6 +219,8 @@ do {
 
                                 System.out.println("SAISIR ID DE L'UTILISATEUR A AFFICHER :");
                                 idUser = scanner.nextInt();
+                                System.out.println("CHAGERGEMENT EN COURS \n");
+
                                 if(!isUserExist(idUser)) System.out.println("ERREUR ID INCORRECT ! REESAYER");
 
                             }while(!isUserExist(idUser));
@@ -222,21 +240,28 @@ do {
                         case 4:
                             do {
 
-                                System.out.println("SAISIR ID DU ROLE A MODIFIER :");
+                                System.out.println("SAISIR ID DE L'UTILISATEUR A MODIFIER :");
                                 idUser = scanner.nextInt();
+                                System.out.println("CHAGERGEMENT EN COURS \n");
                                 if(!isUserExist(idUser)) System.out.println("ERREUR ID INCORRECT ! REESAYER");
 
                             }while(!isUserExist(idUser));
                             System.out.println("E-MAIL : ");
-                            adressEmail = scanner.nextLine();
                             scanner.nextLine();
-                            System.out.println("SAISIR L'ID DU ROLE : ");
-                            System.out.println("Liste des Roles : ");
-                            for (Role r : daoRole.showAllRole()) {
-                                System.out.println("ID : " + r.getId());
-                                System.out.println("NAME :" + r.getName().toUpperCase());
-                            }
-                            idRole = scanner.nextInt();
+                            adressEmail = scanner.nextLine();
+                            System.out.println("APPUYER SUR ENTRER POUR CONTINUER");
+                            do {
+                                System.out.println("Liste des Roles : \n");
+                                for (Role r : daoRole.showAllRole()) {
+                                    System.out.println( r.getId() + ") "+ r.getName().toUpperCase());
+                                }
+                                System.out.println("\nCHOSIR ID ROLE : ");
+                                idRole = scanner.nextInt();
+
+                                if(!isRoleExist(idRole)) System.out.println("\nERREUR ID INCORRECT ! REES2AYER");
+
+                            }while(!isRoleExist(idRole));
+
                             System.out.println("PASSWORD : ");
                             scanner.nextLine();
                             password = scanner.nextLine();
@@ -250,9 +275,11 @@ do {
 
                                 System.out.println("SAISIR ID DE L'UTILISATEUR A SUPPRIMER :");
                                 idUser = scanner.nextInt();
+                                System.out.println("CHAGERGEMENT EN COURS \n");
                                 if(!isUserExist(idUser)) System.out.println("ERREUR ID INCORRECT ! REESAYER");
 
                             }while(!isUserExist(idUser));
+                            System.out.println("CHAGERGEMENT EN COURS \n");
                             if (daoUser.deleteUser(idUser)) System.out.println("Utilisateur Supprimer avec success");
 
                     }
